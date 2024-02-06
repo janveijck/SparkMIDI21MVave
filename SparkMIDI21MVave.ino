@@ -112,6 +112,7 @@
 #include "Screen.h"
 #include "MIDI.h"
 
+
 void setup() {
 #if defined HELTEC_WIFI
   Heltec.begin(true /*DisplayEnable Enable*/, false /*LoRa Enable*/, true /*Serial Enable*/);
@@ -172,6 +173,33 @@ void loop() {
         case 7:           change_delay_toggle();                        break; // M Vave Bank 8
         case 8:           change_mod_toggle();                          break; // M Vave Bank 8
         case 9:           change_noisegate_toggle();                    break; // M Vave Bank 8
+        case 10:          change_tc_preset(true,"Compressor",false,"DistortionTS9",true,"Rectifier","Flanger",false,"DelayMono",false,true);                            break;               //Metallica        
+        case 11:          change_tc_preset(false,"LA2AComp",true,"Booster",false,"ADClean","Flanger",true,"VintageDelay",true,true);                            break;               // Dire Straits
+        case 12:          change_tc_preset(true,"LA2AComp",true,"Booster",false,"EVH","ChorusAnalog",true,"DelayMono",true,true);                            break;               //Eddie Van Halen
+        case 13:          change_tc_preset(true,"Compressor",false,"Overdrive",true,"TwoStoneSP50","Flanger",false,"DelayMono",false,true);                            break;               //SRV
+        case 14:          change_tc_preset(true,"BlueComp",true,"Booster",false,"ADClean","Flanger",true,"DelayMono",true,true);                            break;               //Nothing else matters
+        case 15:          change_tc_preset(true,"Compressor",true,"Booster",true,"Twin","ChorusAnalog",true,"DelayRe201",true,true);                            break;               // Purple Rain
+        case 16:          change_tc_preset(true,"BlueComp",true,"Booster",true,"Twin","ChorusAnalog",true,"DelayRe201",true,true);                            break;               //Clean Rhythm Delay
+        case 17:          change_tc_preset(true,"BlueComp",true,"Booster",false,"ADClean","ChorusAnalog",true,"DelayMono",false,true);                            break;               //Modern Vintage Clean
+        case 18:          change_tc_preset(false,"Compressor",true,"Booster",false,"ADClean","Cloner",true,"DelayMono",false,true);                            break;               //Come As You Are - Nirvana
+        case 19:          change_tc_preset(true,"LA2AComp",true,"Booster",false,"FatAcousticV2","Flanger",true,"DelayMono",false,true);                            break;               //Grunge Acoustic
+        case 20:          change_tc_preset(true,"Compressor",false,"Booster",true,"Bassman","Flanger",false,"DelayMono",false,true);                            break;               //Blues Legend
+        case 21:          change_tc_preset(false,"LA2AComp",true,"Booster",true,"ADClean","Flanger",true,"VintageDelay",true,true);                            break;               // Dire Straits nice mid rock tone
+        case 22:          change_tc_preset(true,"Compressor",false,"DistortionTS9",true,"Plexi","Flanger",false,"VintageDelay",true,true);                            break;               //GnR Lead
+        case 23:          change_tc_preset(true,"Compressor",false,"Booster",true,"TwoStoneSP50","Flanger",false,"DelayMono",false,true);                            break;               //SRV II
+        case 24:          change_tc_preset(true,"BlueComp",true,"DistortionTS9",true,"SwitchAxeLead","ChorusAnalog",true,"DelayMono",true,true);                            break;               //Motley Crue 80’s tone
+        case 25:          change_tc_preset(true,"Compressor",false,"DistortionTS9",true,"AC Boost","Flanger",false,"DelayMono",false,true);                            break;               //Blues Strat
+        case 26:          change_tc_preset(true,"BlueComp",true,"Booster",false,"94MatchDCV2","ChorusAnalog",true,"DelayRe201",true,true);                            break;               //Prog Wide Clean
+        case 27:          change_tc_preset(true,"Compressor",true,"DistortionTS9",true,"YJM100","Flanger",false,"DelayRe201",true,true);                            break;               //1 Rocks 🔊🔊🔊 Pink Fl., Comfortably, ACDC
+        case 28:          change_tc_preset(true,"BlueComp",true,"DistortionTS9",true,"SwitchAxeLead","ChorusAnalog",true,"DelayMono",true,true);                            break;               // 80’s-90’s Hair Metal Shred
+        case 29:          change_tc_preset(true,"BlueComp",true,"Booster",false,"AC Boost","Flanger",false,"DelayMono",false,true);                            break;               //Oasis
+        case 30:          change_tc_preset(true,"BassComp",true,"Booster",false,"Acoustic","Flanger",false,"DelayMono",false,true);                            break;               //Classic Words Acoustic
+        case 31:          change_tc_preset(true,"LA2AComp",true,"Booster",true,"ADClean","Phaser",true,"DelayRe201",true,true);                            break;               //Funk Wah
+        case 32:          change_tc_preset(true,"BassComp",true,"Booster",true,"FlatAcoustic","Flanger",false,"DelayEchoFilt",true,true);                            break;               //1-Cleanjazzy
+        case 33:          change_tc_preset(true,"LA2AComp",true,"DistortionTS9",true,"ADClean","Flanger",false,"VintageDelay",true,true);                            break;               //Whole Lotta Love Jimmy Page Led Zeppelin
+
+
+
         case 124:         tuner_on_off(1);                              break; // M Vave Bank 8      
         case 125:         tuner_on_off(0);                              break; // M Vave Bank 8
       }
