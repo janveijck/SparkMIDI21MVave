@@ -162,19 +162,21 @@ void loop() {
     }
     if (midi_cmd == 0xc0) { 
       switch (mi[1]) {
-        case 0:              change_hardware_preset(0);                 break; // MIDI Commander BIFX A
-        case 1:              change_hardware_preset(1);                 break; // MIDI Commander BIFX B
-        case 2:              change_hardware_preset(2);                 break; // MIDI Commander BIFX C
-        case 3:              change_hardware_preset(3);                 break; // MIDI Commander BIFX D
+        case 0:              change_hardware_preset(0);                 break; // M-Vave 01
+        case 1:              change_hardware_preset(1);                 break; // M-Vave 02
+        case 2:              change_hardware_preset(2);                 break; // M-Vave 03
+        case 3:              change_hardware_preset(3);                 break; // M-Vave 04
 
-        case 4:           change_comp_toggle();                         break; // M Vave Bank 8
-        case 5:           change_drive_toggle();                        break; // M Vave Bank 8    
-        case 6:           change_reverb_toggle();                       break; // M Vave Bank 8
-        case 7:           change_delay_toggle();                        break; // M Vave Bank 8
-        case 8:           change_mod_toggle();                          break; // M Vave Bank 8
-        case 9:           change_noisegate_toggle();                    break; // M Vave Bank 8
-        // preset codes
-case 10:  /*  Metallica  */  
+        case 4:           change_comp_toggle();                         break; // M-Vave 05
+        case 5:           change_drive_toggle();                        break; // M-Vave 06    
+        case 6:           change_reverb_toggle();                       break; // M-Vave 07
+        case 7:           change_delay_toggle();                        break; // M-Vave 08
+
+        case 8:           change_mod_toggle();                          break; // M-Vave 09
+        case 9:           change_noisegate_toggle();                    break; // M-Vave 11
+// preset codes
+
+case 10:  /*  Metallica - M-Vave position:  12  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.49386200308799744);
 						change_noisegate_param(1,0.6338970065116882);
@@ -212,7 +214,7 @@ case 10:  /*  Metallica  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 11:  /*   Dire Straits  */  
+case 11:  /*   Dire Straits - M-Vave position:  13  */  
 						change_noisegate_onoff(false);
 						change_noisegate_param(0,0.2181818187236786);
 						change_noisegate_param(1,0.06487986445426941);
@@ -249,7 +251,7 @@ case 11:  /*   Dire Straits  */
 						change_reverb_param(7,1);
 						break;
 
-case 12:  /*  Bend the Fend  */  
+case 12:  /*  Bend the Fend - M-Vave position:  14  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.0010000000474974513);
 						change_noisegate_param(1,0);
@@ -285,7 +287,7 @@ case 12:  /*  Bend the Fend  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 13:  /*  Classic Goldface  */  
+case 13:  /*  Classic Goldface - M-Vave position:  15  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.4912109971046448);
 						change_noisegate_param(1,0.49849799275398254);
@@ -323,7 +325,7 @@ case 13:  /*  Classic Goldface  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 14:  /*  Hendrix   */  
+case 14:  /*  Hendrix  - M-Vave position:  16  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.8193359971046448);
 						change_noisegate_param(1,1);
@@ -361,7 +363,7 @@ case 14:  /*  Hendrix   */
 						change_reverb_param(6,0.6000000238418579);
 						break;
 
-case 15:  /*  Engl Fireball  */  
+case 15:  /*  Engl Fireball - M-Vave position:  17  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.5455359816551208);
 						change_noisegate_param(1,0.5694590210914612);
@@ -399,7 +401,7 @@ case 15:  /*  Engl Fireball  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 16:  /*  Eddie Van Halen  */  
+case 16:  /*  Eddie Van Halen - M-Vave position:  18  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.492561012506485);
 						change_noisegate_param(1,0.5122069716453552);
@@ -437,7 +439,7 @@ case 16:  /*  Eddie Van Halen  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 17:  /*  SRV  */  
+case 17:  /*  SRV - M-Vave position:  19  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.07552083333333334);
 						change_noisegate_param(1,0.08160717288653056);
@@ -476,7 +478,7 @@ case 17:  /*  SRV  */
 						change_reverb_param(6,0);
 						break;
 
-case 18:  /*  Gilmour  */  
+case 18:  /*  Gilmour - M-Vave position:  20  */  
 						change_noisegate_onoff(false);
 						change_noisegate_param(0,0.2181818187236786);
 						change_noisegate_param(1,0.06487986445426941);
@@ -513,7 +515,7 @@ case 18:  /*  Gilmour  */
 						change_reverb_param(6,0.6000000238418579);
 						break;
 
-case 19:  /*  Nothing else matters  */  
+case 19:  /*  Nothing else matters - M-Vave position:  21  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.054980138937632234);
 						change_noisegate_param(1,0.11526797215143839);
@@ -551,7 +553,7 @@ case 19:  /*  Nothing else matters  */
 						change_reverb_param(6,0.3);
 						break;
 
-case 20:  /*  Sweet Child Of Mine  */  
+case 20:  /*  Sweet Child Of Mine - M-Vave position:  22  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.3082520067691803);
 						change_noisegate_param(1,0.4663360118865967);
@@ -589,7 +591,7 @@ case 20:  /*  Sweet Child Of Mine  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 21:  /*   Purple Rain  */  
+case 21:  /*   Purple Rain - M-Vave position:  23  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.5665820240974426);
 						change_noisegate_param(1,0.5455330014228821);
@@ -625,7 +627,7 @@ case 21:  /*   Purple Rain  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 22:  /*  John mayer ish  */  
+case 22:  /*  John mayer ish - M-Vave position:  24  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.0010000000474974513);
 						change_noisegate_param(1,0);
@@ -660,7 +662,7 @@ case 22:  /*  John mayer ish  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 23:  /*  Shine On Crazy Diamond Clean  */  
+case 23:  /*  Shine On Crazy Diamond Clean - M-Vave position:  25  */  
 						change_noisegate_onoff(false);
 						change_noisegate_param(0,0.2181818187236786);
 						change_noisegate_param(1,0.06487986445426941);
@@ -695,7 +697,7 @@ case 23:  /*  Shine On Crazy Diamond Clean  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 24:  /*  BB king  */  
+case 24:  /*  BB king - M-Vave position:  26  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.3698920011520386);
 						change_noisegate_param(1,0.16577300429344177);
@@ -731,7 +733,7 @@ case 24:  /*  BB king  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 25:  /*  Clean Rhythm Delay  */  
+case 25:  /*  Clean Rhythm Delay - M-Vave position:  27  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.1435218056042989);
 						change_noisegate_param(1,0.16784806549549103);
@@ -770,7 +772,7 @@ case 25:  /*  Clean Rhythm Delay  */
 						change_reverb_param(6,0.5);
 						break;
 
-case 26:  /*  The mighty sabbath  */  
+case 26:  /*  The mighty sabbath - M-Vave position:  28  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.6699540019035339);
 						change_noisegate_param(1,0.8994550108909607);
@@ -808,7 +810,7 @@ case 26:  /*  The mighty sabbath  */
 						change_reverb_param(6,0);
 						break;
 
-case 27:  /*  Modern Vintage Clean  */  
+case 27:  /*  Modern Vintage Clean - M-Vave position:  29  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.13704976439476013);
 						change_noisegate_param(1,0);
@@ -850,7 +852,7 @@ case 27:  /*  Modern Vintage Clean  */
 						change_reverb_param(6,0.1);
 						break;
 
-case 28:  /*  Pink Floyd - Comfortably Numb (solo 2)  */  
+case 28:  /*  Pink Floyd - Comfortably Numb (solo 2) - M-Vave position:  30  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.299888014793396);
 						change_noisegate_param(1,0.37761199474334717);
@@ -888,7 +890,7 @@ case 28:  /*  Pink Floyd - Comfortably Numb (solo 2)  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 29:  /*  SRV Clean  */  
+case 29:  /*  SRV Clean - M-Vave position:  31  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.5420539975166321);
 						change_noisegate_param(1,0.19391800463199615);
@@ -923,7 +925,7 @@ case 29:  /*  SRV Clean  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 30:  /*  OLD VH  */  
+case 30:  /*  OLD VH - M-Vave position:  32  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.5455359816551208);
 						change_noisegate_param(1,0.5694590210914612);
@@ -961,7 +963,7 @@ case 30:  /*  OLD VH  */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 31:  /*  Come As You Are - Nirvana  */  
+case 31:  /*  Come As You Are - Nirvana - M-Vave position:  33  */  
 						change_noisegate_onoff(false);
 						change_noisegate_param(0,0.1383134772380193);
 						change_noisegate_param(1,0.224642942349116);
@@ -981,7 +983,7 @@ case 31:  /*  Come As You Are - Nirvana  */
 						change_amp_param(4,0.5631168902694405);
 						change_mod_model("Cloner");change_mod_onoff(true);
 						change_mod_param(0,0.35584259304133325);
-						change_mod_param(1,0);
+						change_mod_param(1,0.4);
 						change_delay_model("VintageDelay");change_delay_onoff(false);
 						change_delay_param(0,0.37873878828069785);
 						change_delay_param(1,0.4257446501136485);
@@ -997,7 +999,7 @@ case 31:  /*  Come As You Are - Nirvana  */
 						change_reverb_param(6,0.6);
 						break;
 
-case 32:  /*   Solo Santana   */  
+case 32:  /*   Solo Santana  - M-Vave position:  34  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.5455359816551208);
 						change_noisegate_param(1,0.5694590210914612);
@@ -1033,7 +1035,7 @@ case 32:  /*   Solo Santana   */
 						change_reverb_param(6,0.20000000298023224);
 						break;
 
-case 33:  /*   Clean for Ballads  */  
+case 33:  /*   Clean for Ballads - M-Vave position:  35  */  
 						change_noisegate_onoff(false);
 						change_noisegate_param(0,0.21818182);
 						change_noisegate_param(1,0.064879864);
@@ -1070,7 +1072,7 @@ case 33:  /*   Clean for Ballads  */
 						change_reverb_param(7,1);
 						break;
 
-case 34:  /*  12 str acou strumming.CN1  */  
+case 34:  /*  12 str acou strumming.CN1 - M-Vave position:  36  */  
 						change_noisegate_onoff(true);
 						change_noisegate_param(0,0.10436899960041046);
 						change_noisegate_param(1,0.5);
@@ -1104,9 +1106,228 @@ case 34:  /*  12 str acou strumming.CN1  */
 						change_reverb_param(4,0.602287232875824);
 						change_reverb_param(5,0.5941176414489746);
 						change_reverb_param(6,0);
-						break;             
+						break;
+case 35:  /*  Jazz Chorus - M-Vave position:  37  */  
+						change_noisegate_onoff(false);
+						change_noisegate_param(0,0.2181818187236786);
+						change_noisegate_param(1,0.06487986445426941);
+						change_comp_model("BlueComp");change_comp_onoff(true);
+						change_comp_param(0,0.5327230095863342);
+						change_comp_param(1,0.615327000617981);
+						change_comp_param(2,0.4000000059604645);
+						change_comp_param(3,0.6000000238418579);
+						change_drive_model("Booster");change_drive_onoff(false);
+						change_drive_param(0,0.7670454382896423);
+						change_amp_model("RolandJC120");
+						change_amp_param(0,0.28652599453926086);
+						change_amp_param(1,0.9842990040779114);
+						change_amp_param(2,0.3525499999523163);
+						change_amp_param(3,0.8382710218429565);
+						change_amp_param(4,0.6499999761581421);
+						change_mod_model("ChorusAnalog");change_mod_onoff(true);
+						change_mod_param(0,0.6908019781112671);
+						change_mod_param(1,0.2247219979763031);
+						change_mod_param(2,0.3086880147457123);
+						change_mod_param(3,0.466064989566803);
+						change_delay_model("DelayMono");change_delay_onoff(true);
+						change_delay_param(0,0.47319701313972473);
+						change_delay_param(1,0);
+						change_delay_param(2,0.658594012260437);
+						change_delay_param(3,0.30000001192092896);
+						change_delay_param(4,0);
+						change_reverb_onoff(true);
+						change_reverb_param(0,0.2857142984867096);
+						change_reverb_param(1,0.4083535671234131);
+						change_reverb_param(2,0.28948888182640076);
+						change_reverb_param(3,0.38831719756126404);
+						change_reverb_param(4,0.5821428298950195);
+						change_reverb_param(5,0.6500000357627869);
+						change_reverb_param(6,0.20000000298023224);
+						break;
 
+case 36:  /*  Smooth Jazz - M-Vave position:  38  */  
+						change_noisegate_onoff(false);
+						change_noisegate_param(0,0.2181818187236786);
+						change_noisegate_param(1,0.06487986445426941);
+						change_comp_model("BlueComp");change_comp_onoff(true);
+						change_comp_param(0,0.7463269829750061);
+						change_comp_param(1,0.47999998927116394);
+						change_comp_param(2,0.4000000059604645);
+						change_comp_param(3,0.6000000238418579);
+						change_drive_model("Booster");change_drive_onoff(false);
+						change_drive_param(0,0.7670454382896423);
+						change_amp_model("Bassman");
+						change_amp_param(0,0.3732079863548279);
+						change_amp_param(1,0.6506069898605347);
+						change_amp_param(2,0.5805780291557312);
+						change_amp_param(3,0.6000000238418579);
+						change_amp_param(4,0.4972172677516937);
+						change_mod_model("ChorusAnalog");change_mod_onoff(true);
+						change_mod_param(0,0.0664059966802597);
+						change_mod_param(1,0.20000000298023224);
+						change_mod_param(2,0.699999988079071);
+						change_mod_param(3,0.800000011920929);
+						change_delay_model("DelayMono");change_delay_onoff(false);
+						change_delay_param(0,0.38177722692489624);
+						change_delay_param(1,0.39830508828163147);
+						change_delay_param(2,0.7363313436508179);
+						change_delay_param(3,0.6000000238418579);
+						change_delay_param(4,0);
+						change_reverb_onoff(true);
+						change_reverb_param(0,0.33571431040763855);
+						change_reverb_param(1,0.6438256502151489);
+						change_reverb_param(2,0.5208232402801514);
+						change_reverb_param(3,0.28129544854164124);
+						change_reverb_param(4,0.4695378243923187);
+						change_reverb_param(5,0.45546218752861023);
+						change_reverb_param(6,0.6000000238418579);
+						break;
 
+case 37:  /*  Clean jazz - M-Vave position:  39  */  
+						change_noisegate_onoff(true);
+						change_noisegate_param(0,0.14809900522232056);
+						change_noisegate_param(1,0);
+						change_comp_model("LA2AComp");change_comp_onoff(false);
+						change_comp_param(0,0);
+						change_comp_param(1,0.7126444578170776);
+						change_comp_param(2,0.7248061895370483);
+						change_drive_model("Booster");change_drive_onoff(false);
+						change_drive_param(0,0.7670454382896423);
+						change_amp_model("Bassman");
+						change_amp_param(0,0.5391340255737305);
+						change_amp_param(1,0.6000000238418579);
+						change_amp_param(2,0.49923598766326904);
+						change_amp_param(3,1);
+						change_amp_param(4,0.4972172677516937);
+						change_mod_model("Tremolo");change_mod_onoff(false);
+						change_mod_param(0,0.4541335105895996);
+						change_mod_param(1,0.699933648109436);
+						change_mod_param(2,0.5961538553237915);
+						change_delay_model("DelayMono");change_delay_onoff(false);
+						change_delay_param(0,0.38177722692489624);
+						change_delay_param(1,0.39830508828163147);
+						change_delay_param(2,0.7363313436508179);
+						change_delay_param(3,0.6000000238418579);
+						change_delay_param(4,0);
+						change_reverb_onoff(true);
+						change_reverb_param(0,0.2857142984867096);
+						change_reverb_param(1,0.4083535671234131);
+						change_reverb_param(2,0.28948888182640076);
+						change_reverb_param(3,0.38831719756126404);
+						change_reverb_param(4,0.5821428298950195);
+						change_reverb_param(5,0.6500000357627869);
+						change_reverb_param(6,0.20000000298023224);
+						break;
+
+case 38:  /*  JC JAZZ - M-Vave position:  40  */  
+						change_noisegate_onoff(true);
+						change_noisegate_param(0,0.8193359971046448);
+						change_noisegate_param(1,1);
+						change_comp_model("LA2AComp");change_comp_onoff(true);
+						change_comp_param(0,0);
+						change_comp_param(1,0.75);
+						change_comp_param(2,0.4000000059604645);
+						change_drive_model("Booster");change_drive_onoff(false);
+						change_drive_param(0,0.7670454382896423);
+						change_amp_model("RolandJC120");
+						change_amp_param(0,0.6000000238418579);
+						change_amp_param(1,0.5);
+						change_amp_param(2,0.800000011920929);
+						change_amp_param(3,0.6000000238418579);
+						change_amp_param(4,0.6499999761581421);
+						change_mod_model("Phaser");change_mod_onoff(true);
+						change_mod_param(0,0.14687499403953552);
+						change_mod_param(1,0);
+						change_delay_model("DelayMono");change_delay_onoff(false);
+						change_delay_param(0,0.38177722692489624);
+						change_delay_param(1,0.39830508828163147);
+						change_delay_param(2,0.7363313436508179);
+						change_delay_param(3,0.6000000238418579);
+						change_delay_param(4,0);
+						change_reverb_onoff(true);
+						change_reverb_param(0,0.2857142984867096);
+						change_reverb_param(1,0.4083535671234131);
+						change_reverb_param(2,0.28948888182640076);
+						change_reverb_param(3,0.38831719756126404);
+						change_reverb_param(4,0.5821428298950195);
+						change_reverb_param(5,0.6500000357627869);
+						change_reverb_param(6,0.20000000298023224);
+						break;
+
+case 39:  /*  Warm jazz clean - M-Vave position:  41  */  
+						change_noisegate_onoff(false);
+						change_noisegate_param(0,0.06250855326652527);
+						change_noisegate_param(1,0);
+						change_noisegate_param(2,0);
+						change_comp_model("BBEOpticalComp");change_comp_onoff(true);
+						change_comp_param(0,0.9520958065986633);
+						change_comp_param(1,0.39101797342300415);
+						change_comp_param(2,0);
+						change_drive_model("DistortionTS9");change_drive_onoff(false);
+						change_drive_param(0,0.1202365830540657);
+						change_drive_param(1,0.3807947039604187);
+						change_drive_param(2,0.5102882981300354);
+						change_drive_param(3,0);
+						change_amp_model("Twin");
+						change_amp_param(0,0.9740259647369385);
+						change_amp_param(1,0.5076923370361328);
+						change_amp_param(2,0.5440759062767029);
+						change_amp_param(3,0.3876703679561615);
+						change_amp_param(4,1);
+						change_mod_model("Cloner");change_mod_onoff(false);
+						change_mod_param(0,0.18785551190376282);
+						change_mod_param(1,0);
+						change_delay_model("DelayMono");change_delay_onoff(true);
+						change_delay_param(0,0.06119631603360176);
+						change_delay_param(1,0.2544043958187103);
+						change_delay_param(2,0.383419394493103);
+						change_delay_param(3,0.6000000238418579);
+						change_delay_param(4,0);
+						change_reverb_onoff(true);
+						change_reverb_param(0,0.2857142984867096);
+						change_reverb_param(1,0.4083535671234131);
+						change_reverb_param(2,0.5642856955528259);
+						change_reverb_param(3,0.3214285671710968);
+						change_reverb_param(4,0.5821428298950195);
+						change_reverb_param(5,0.8369394540786743);
+						change_reverb_param(6,0.20000000298023224);
+						break;
+
+case 40:  /*  Warm Jazz  - M-Vave position:  42  */  
+						change_noisegate_onoff(false);
+						change_noisegate_param(0,0.2181818187236786);
+						change_noisegate_param(1,0.06487986445426941);
+						change_comp_model("LA2AComp");change_comp_onoff(false);
+						change_comp_param(0,0);
+						change_comp_param(1,0.7126444578170776);
+						change_comp_param(2,0.7248061895370483);
+						change_drive_model("Booster");change_drive_onoff(false);
+						change_drive_param(0,0.7670454382896423);
+						change_amp_model("Twin");
+						change_amp_param(0,0.43007799983024597);
+						change_amp_param(1,0.3616490066051483);
+						change_amp_param(2,0.7145100235939026);
+						change_amp_param(3,0.7628909945487976);
+						change_amp_param(4,0.5799999833106995);
+						change_mod_model("Tremolo");change_mod_onoff(false);
+						change_mod_param(0,0.4541335105895996);
+						change_mod_param(1,0.699933648109436);
+						change_mod_param(2,0.5961538553237915);
+						change_delay_model("DelayRe201");change_delay_onoff(true);
+						change_delay_param(0,0.10351599752902985);
+						change_delay_param(1,0.13631300628185272);
+						change_delay_param(2,0.11625900119543076);
+						change_delay_param(3,0.8659489750862122);
+						change_delay_param(4,0);
+						change_reverb_onoff(true);
+						change_reverb_param(0,0.33571431040763855);
+						change_reverb_param(1,0.6438256502151489);
+						change_reverb_param(2,0.5208232402801514);
+						change_reverb_param(3,0.28129544854164124);
+						change_reverb_param(4,0.4695378243923187);
+						change_reverb_param(5,0.45546218752861023);
+						change_reverb_param(6,0.6000000238418579);
+						break;            
         case 124:         tuner_on_off(1);                              break; // M Vave Bank 8      
         case 125:         tuner_on_off(0);                              break; // M Vave Bank 8
       }

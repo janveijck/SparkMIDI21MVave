@@ -1,0 +1,52 @@
+
+         1:       change_hardware_preset(0);                 break; // M-Vave 01
+         2:       change_hardware_preset(1);                 break; // M-Vave 02
+         3:       change_hardware_preset(2);                 break; // M-Vave 03
+         4:       change_hardware_preset(3);                 break; // M-Vave 04
+
+         5:       change_comp_toggle();                         break; // M-Vave 05
+         6:       change_drive_toggle();                        break; // M-Vave 06    
+         7:       change_reverb_toggle();                       break; // M-Vave 07
+         8:       change_delay_toggle();                        break; // M-Vave 08
+
+         9:       change_mod_toggle();                          break; // M-Vave 09
+         10:       change_noisegate_toggle();                    break; // M-Vave 11
+		 11:  /*  Metallica - M-Vave position:  12  */  
+		 12:  /*  Dire Straits - M-Vave position:  13  */  
+		
+		 13:  /*  Bend the Fend - M-Vave position:  14  */  
+		 14:  /*  Classic Goldface - M-Vave position:  15  */  
+		 15:  /*  Hendrix  - M-Vave position:  16  */  
+		 16:  /*  Engl Fireball - M-Vave position:  17  */  
+		
+		 17:  /*  Eddie Van Halen - M-Vave position:  18  */  
+		 18:  /*  SRV - M-Vave position:  19  */  
+		 19:  /*  Gilmour - M-Vave position:  20  */  
+		 20:  /*  Nothing else matters - M-Vave position:  21  */  
+		
+		 21:  /*  Sweet Child Of Mine - M-Vave position:  22  */  
+		 22:  /*   Purple Rain - M-Vave position:  23  */  
+		 23:  /*  John mayer ish - M-Vave position:  24  */  
+		 24:  /*  Shine On Crazy Diamond Clean - M-Vave position:  25  */  
+		
+		 25:  /*  BB king - M-Vave position:  26  */  
+		 26:  /*  Clean Rhythm Delay - M-Vave position:  27  */  
+		 27:  /*  The mighty sabbath - M-Vave position:  28  */  
+		 28:  /*  Modern Vintage Clean - M-Vave position:  29  */  
+		
+		 29:  /*  Pink Floyd - Comfortably Numb (solo 2) - M-Vave position:  30  */  
+		 30:  /*  SRV Clean - M-Vave position:  31  */  
+		 31:  /*  OLD VH - M-Vave position:  32  */  
+		 32:  /*  Come As You Are - Nirvana - M-Vave position:  33  */  
+		
+		 33:  /*   Solo Santana  - M-Vave position:  34  */  
+		 34:  /*   Clean for Ballads - M-Vave position:  35  */  
+		 35:  /*  12 str acou strumming.CN1 - M-Vave position:  36  */  
+		 36:  /*  Jazz Chorus - M-Vave position:  37  */  
+		
+		 37:  /*  Smooth Jazz - M-Vave position:  38  */  
+		 38:  /*  Clean jazz - M-Vave position:  39  */  
+		 39:  /*  JC JAZZ - M-Vave position:  40  */  
+		 40:  /*  Warm jazz clean - M-Vave position:  41  */  
+		
+		 41:  /*  Warm Jazz  - M-Vave position:  42  */  
