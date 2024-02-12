@@ -424,19 +424,4 @@ void tuner_on_off(bool on_off) {
   spark_process();  
 }
 
-//custom presets from tonecloud
-void change_tc_preset(bool bnoisegate_onoff, char *ccompression_model, bool bcompression_onoff, char *cdrive_model, bool bdrive_onoff, char *camp_model, char *cmod_model, bool bmod_onoff, char *cdelay_model, bool bdelay_onoff, bool breverb_onoff) {
-  change_noisegate_onoff(false);
-  change_comp_onoff(false);
-  change_drive_onoff(false);
-  change_mod_onoff(false);
-  change_delay_onoff(false);
-  change_reverb_onoff(false);
-  change_comp_model(ccompression_model);
-  change_drive_model(cdrive_model);
-  change_amp_model(camp_model);
-  change_mod_model(cmod_model);
-  change_delay_model(cdelay_model);
-  //spark_process();
-  //app_process();
-}
+
