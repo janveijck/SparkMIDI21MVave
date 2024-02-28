@@ -241,6 +241,8 @@ void change_generic_model(char *new_eff, int slot) {
   if (strcmp(presets[5].effects[slot].EffectName, new_eff) != 0) {
     spark_msg_out.change_effect(presets[5].effects[slot].EffectName, new_eff);
     strcpy(presets[5].effects[slot].EffectName, new_eff);
+    DEBUG("Preset[5]");DEBUG(presets[5].effects[slot].EffectName);
+    DEBUG("new_eff");DEBUG(new_eff);
     spark_process();
     delay(100);
   }
