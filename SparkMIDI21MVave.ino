@@ -124,6 +124,7 @@ int EQ400 = 0;
 int EQ800 = 0;
 int EQ1600 = 0;
 int  EQ3200 = 0;
+int EQ32 = 0;
 
 void setup() {
 #if defined HELTEC_WIFI
@@ -217,31 +218,33 @@ void loop() {
         case 10:    // walk through different compressor models
             change_comp_onoff(true);
             switch (iCompressor) {
-              case 1:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 2;    change_comp_model("LA2AComp"); break;
-              case 2:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 3;    change_comp_model("BlueComp"); break;
-              case 3:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 4;    change_comp_model("Compressor"); break;
-              case 4:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 5;    change_comp_model("BassComp"); break;
-              case 5:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 6;    change_comp_model("BBEOpticalComp"); break;
-              case 6:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 1;    change_comp_model("JH.Vox846"); break;
+              case 1:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 2;    change_comp_model("LA2AComp");  update_ui();break;
+              case 2:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 3;    change_comp_model("BlueComp");  update_ui();break;
+              case 3:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 4;    change_comp_model("Compressor");  update_ui();break;
+              case 4:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 5;    change_comp_model("BassComp");  update_ui();break;
+              case 5:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 6;    change_comp_model("BBEOpticalComp");  update_ui();break;
+              case 6:     DEBUG("iCompressor"); DEBUG(iCompressor);iCompressor = 1;    change_comp_model("JH.Vox846");  update_ui();break;
             }
+            break;
         case 11:    // walk through different Drive models
             change_drive_onoff(true);
             switch (iDrive) {
-              case 1:     iDrive = 2;    change_drive_model("Booster"); break;
-              case 2:     iDrive = 3;    change_drive_model("DistortionTS9"); break;
-              case 3:     iDrive = 4;    change_drive_model("Overdrive"); break;
-              case 4:     iDrive = 5;    change_drive_model("Fuzz"); break;
-              case 5:     iDrive = 6;    change_drive_model("ProCoRat"); break;
-              case 6:     iDrive = 7;    change_drive_model("BassBigMuff"); break;
-              case 7:     iDrive = 8;    change_drive_model("GuitarMuff"); break;
-              case 8:     iDrive = 9;    change_drive_model("MaestroBassmaster"); break;
-              case 9:     iDrive = 10;    change_drive_model("SABdriver"); break;
-              case 10:     iDrive = 11;    change_drive_model("SABdriver"); break;
-              case 11:     iDrive = 12;    change_drive_model("JH.AxisFuzz"); break;
-              case 12:     iDrive = 13;    change_drive_model("JH.SupaFuzz"); break;
-              case 13:     iDrive = 14;    change_drive_model("JH.Octavia"); break;
-              case 14:     iDrive = 1;    change_drive_model("JH.FuzzTone"); break;
+              case 1:     iDrive = 2;    change_drive_model("Booster"); update_ui(); break;
+              case 2:     iDrive = 3;    change_drive_model("DistortionTS9");  update_ui();break;
+              case 3:     iDrive = 4;    change_drive_model("Overdrive");  update_ui();break;
+              case 4:     iDrive = 5;    change_drive_model("Fuzz");  update_ui();break;
+              case 5:     iDrive = 6;    change_drive_model("ProCoRat");  update_ui();break;
+              case 6:     iDrive = 7;    change_drive_model("BassBigMuff");  update_ui();break;
+              case 7:     iDrive = 8;    change_drive_model("GuitarMuff");  update_ui();break;
+              case 8:     iDrive = 9;    change_drive_model("MaestroBassmaster");  update_ui();break;
+              case 9:     iDrive = 10;    change_drive_model("SABdriver");  update_ui();break;
+              case 10:     iDrive = 11;    change_drive_model("SABdriver");  update_ui();break;
+              case 11:     iDrive = 12;    change_drive_model("JH.AxisFuzz");  update_ui();break;
+              case 12:     iDrive = 13;    change_drive_model("JH.SupaFuzz");  update_ui();break;
+              case 13:     iDrive = 14;    change_drive_model("JH.Octavia");  update_ui();break;
+              case 14:     iDrive = 1;    change_drive_model("JH.FuzzTone");  update_ui();break;
             }
+            break;
         case 12:    // walk through different Amp models
             switch (iAmp) {
               case 1:     iAmp = 2;           change_amp_model("RolandJC120"); break;
@@ -284,33 +287,36 @@ void loop() {
               case 38:     iAmp = 39;           change_amp_model("JH.SoundCity100"); break;
               case 39:     iAmp = 1;           change_amp_model("6505Plus"); break;
             }
+            break;
         case 13:    // walk through different Modulation models
             change_mod_onoff(true);
             switch (iModulation) {
-              case 1:     iModulation = 2;    change_mod_model("Tremolo"); break;
-              case 2:     iModulation = 3;    change_mod_model("ChorusAnalog"); break;
-              case 3:     iModulation = 4;    change_mod_model("Flanger"); break;
-              case 4:     iModulation = 5;    change_mod_model("Phaser"); break;
-              case 5:     iModulation = 6;    change_mod_model("Vibrato01"); break;
-              case 6:     iModulation = 7;    change_mod_model("UniVibe"); break;
-              case 7:     iModulation = 8;    change_mod_model("Cloner"); break;
-              case 8:     iModulation = 9;    change_mod_model("MiniVibe"); break;
-              case 9:     iModulation = 10;    change_mod_model("Tremolator"); break;
-              case 10:     iModulation = 11;    change_mod_model("TremoloSquare"); break;
-              case 11:     iModulation = 12;    change_mod_model("JH.VoodooVibeJr"); break;
-              case 12:     iModulation = 13;    change_mod_model("GuitarEQ6"); break;
-              case 13:     iModulation = 1;    change_mod_model("BassEQ6"); break;
+              case 1:     iModulation = 2;    change_mod_model("Tremolo");  update_ui();break;
+              case 2:     iModulation = 3;    change_mod_model("ChorusAnalog");  update_ui();break;
+              case 3:     iModulation = 4;    change_mod_model("Flanger");  update_ui();break;
+              case 4:     iModulation = 5;    change_mod_model("Phaser");  update_ui();break;
+              case 5:     iModulation = 6;    change_mod_model("Vibrato01");  update_ui();break;
+              case 6:     iModulation = 7;    change_mod_model("UniVibe");  update_ui();break;
+              case 7:     iModulation = 8;    change_mod_model("Cloner");  update_ui();break;
+              case 8:     iModulation = 9;    change_mod_model("MiniVibe");  update_ui();break;
+              case 9:     iModulation = 10;    change_mod_model("Tremolator");  update_ui();break;
+              case 10:     iModulation = 11;    change_mod_model("TremoloSquare");  update_ui();break;
+              case 11:     iModulation = 12;    change_mod_model("JH.VoodooVibeJr");  update_ui();break;
+              case 12:     iModulation = 13;    change_mod_model("GuitarEQ6");  update_ui();break;
+              case 13:     iModulation = 1;    change_mod_model("BassEQ6");  update_ui();break;
             }
+            break;
         case 14:    // walk through different Delay models
             change_delay_onoff(true);
             switch (iDelay) {
-              case 1:     iDelay = 2;    change_delay_model("DelayMono"); break;
-              case 2:     iDelay = 3;    change_delay_model("DelayEchoFilt"); break;
-              case 3:     iDelay = 4;    change_delay_model("VintageDelay"); break;
-              case 4:     iDelay = 5;    change_delay_model("DelayReverse"); break;
-              case 5:     iDelay = 6;    change_delay_model("DelayMultiHead"); break;
-              case 6:     iDelay = 1;    change_delay_model("DelayRe201"); break;
+              case 1:     iDelay = 2;    change_delay_model("DelayMono");  update_ui();break;
+              case 2:     iDelay = 3;    change_delay_model("DelayEchoFilt");  update_ui();break;
+              case 3:     iDelay = 4;    change_delay_model("VintageDelay");  update_ui();break;
+              case 4:     iDelay = 5;    change_delay_model("DelayReverse");  update_ui();break;
+              case 5:     iDelay = 6;    change_delay_model("DelayMultiHead");  update_ui();break;
+              case 6:     iDelay = 1;    change_delay_model("DelayRe201");  update_ui();break;
             }
+            break;
 
         case 15:  // EQ Level
             change_mod_onoff(true);
@@ -322,6 +328,7 @@ void loop() {
               case 4:   EQLevel = 5; change_mod_model("GuitarEQ6");	change_mod_param(0,0.8); break;
               case 5:   EQLevel = 0; change_mod_model("GuitarEQ6");	change_mod_param(0,1.0); break;
             }
+            break;
         case 16:  // EQ 200
             change_mod_onoff(true);
             switch (EQ200) {
@@ -332,6 +339,7 @@ void loop() {
               case 4:   EQ200 = 5; change_mod_model("GuitarEQ6");	change_mod_param(1,0.8); break;
               case 5:   EQ200 = 0; change_mod_model("GuitarEQ6");	change_mod_param(1,1.0); break;
             }
+            break;
         case 17:  // EQ 400
             change_mod_onoff(true);
             switch (EQ400) {
@@ -342,6 +350,7 @@ void loop() {
               case 4:   EQ400 = 5; change_mod_model("GuitarEQ6");	change_mod_param(2,0.8); break;
               case 5:   EQ400 = 0; change_mod_model("GuitarEQ6");	change_mod_param(2,1.0); break;
             }
+            break;
         case 18:  // EQ 800
             change_mod_onoff(true);
             switch (EQ800) {
@@ -352,6 +361,7 @@ void loop() {
               case 4:   EQ800 = 5; change_mod_model("GuitarEQ6");	change_mod_param(3,0.8); break;
               case 5:   EQ800 = 0; change_mod_model("GuitarEQ6");	change_mod_param(0,1.0); break;
             }
+            break;
         case 19:  // EQ 1600
             change_mod_onoff(true);
             switch (EQ1600) {
@@ -362,6 +372,7 @@ void loop() {
               case 4:   EQ1600 = 5; change_mod_model("GuitarEQ6");	change_mod_param(4,0.8); break;
               case 5:   EQ1600 = 0; change_mod_model("GuitarEQ6");	change_mod_param(4,1.0); break;
             }
+            break;
         case 20:  // EQ 3200
             change_mod_onoff(true);
             switch (EQ3200) {
@@ -372,6 +383,18 @@ void loop() {
               case 4:   EQ3200 = 5; change_mod_model("GuitarEQ6");	change_mod_param(5,0.8); break;
               case 5:   EQ3200 = 0; change_mod_model("GuitarEQ6");	change_mod_param(5,1.0); break;
             }
+            break;
+        case 21:  // EQ 3200
+            change_mod_onoff(true);
+            switch (EQ32) {
+              case 0:   EQ32 = 1; change_mod_model("GuitarEQ6");	change_mod_param(6,0.0); break;
+              case 1:   EQ32 = 2; change_mod_model("GuitarEQ6");	change_mod_param(6,0.2); break;
+              case 2:   EQ32 = 3; change_mod_model("GuitarEQ6");	change_mod_param(6,0.4); break;
+              case 3:   EQ32 = 4; change_mod_model("GuitarEQ6");	change_mod_param(6,0.6); break;
+              case 4:   EQ32 = 5; change_mod_model("GuitarEQ6");	change_mod_param(6,0.8); break;
+              case 5:   EQ32 = 0; change_mod_model("GuitarEQ6");	change_mod_param(6,1.0); break;
+            }
+            break;
         case 124:         tuner_on_off(1);                              break; // M Vave Bank 8      
         case 125:         tuner_on_off(0);                              break; // M Vave Bank 8
       }
