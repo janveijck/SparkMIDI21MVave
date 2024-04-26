@@ -57,5 +57,6 @@ void tuner_on_off(bool on_off);
 #define AMP_MID 2
 #define AMP_BASS 3
 #define AMP_MASTER 4
+#define MOD_EQ_LEVEL 0
 
 #endif

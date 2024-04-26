@@ -401,6 +401,7 @@ void loop() {
     }
 
     if (midi_cmd == 0xb0 && midi_chan == 4) {     
+      DEBUG("midi_chan=4");
       switch (mi[1]) {
         case 1:              change_amp_param(AMP_GAIN, mi[2]/127.0);   break; // MIDI Commander CUS2 EXP l          
         case 2:              change_amp_param(AMP_MASTER, mi[2]/127.0); break; // MIDI Commander CUS2 EXP 2  
@@ -415,15 +416,16 @@ void loop() {
         }
     }
     
-    if (midi_cmd == 0xb0) {     
+    if (midi_cmd == 0xb0) { 
       switch (mi[1]) {
+        case 0:              DEBUG("expression pedal"); change_amp_param(AMP_MASTER, mi[2]/117.0);  break; 
         case 4:              change_amp_param(AMP_GAIN, mi[2]/127.0);   break; // MIDI Commander BIFX EXP 1
         case 7:              change_amp_param(AMP_MASTER, mi[2]/127.0); break; // MIDI Commander BIFX EXP 2  
         }
     }
 
     if (midi_cmd == 0xb0) 
-      switch (midi_chan) {
+        switch (midi_chan) {
         case 1:
           switch (mi[1]) {
             case 80:             change_comp_onoff(onoff);               break; // MIDI Commander BIFX 1
